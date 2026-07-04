@@ -1,0 +1,6 @@
+name = "ai-automation-app-store"
+compatibility_date = "2026-07-04"
+pages_build_output_dir = "dist"
+
+[vars]
+APP_NAME = "AI Automation App Store"
