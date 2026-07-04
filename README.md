@@ -11,7 +11,7 @@ A marketplace-style website for selling practical AI automation templates to sma
 - Automation detail blueprints
 - Prompt templates for each automation
 - Setup checklist for each automation
-- Netlify-ready static deployment
+- Cloudflare Pages-ready static deployment
 
 ## Starter automation apps included
 
@@ -37,12 +37,38 @@ npm run dev
 npm run build
 ```
 
-## Deploy on Netlify
+## Deploy on Cloudflare Pages
 
-Use these settings:
+Use these Cloudflare Pages settings:
 
+- Framework preset: `Vite`
 - Build command: `npm run build`
-- Publish directory: `dist`
+- Build output directory: `dist`
+- Root directory: `/`
+- Node.js version: `20` or newer
+
+This repo includes:
+
+- `wrangler.toml` for Cloudflare Pages project configuration
+- `public/_redirects` so direct links and refreshed routes fall back to `index.html`
+
+### Cloudflare dashboard deployment
+
+1. Go to Cloudflare Dashboard.
+2. Open **Workers & Pages**.
+3. Choose **Create application**.
+4. Choose **Pages**.
+5. Connect this GitHub repository.
+6. Use the build settings above.
+7. Deploy.
+
+### Cloudflare CLI deployment
+
+```bash
+npm install
+npm run build
+npx wrangler pages deploy dist --project-name ai-automation-app-store
+```
 
 ## What counts as an "app" in this store?
 
